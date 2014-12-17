@@ -53,5 +53,5 @@ class String
     self.underscored_class_name.pluralize
   end
 
-  extend_if_nonexistant :pluralize, :tablelize, :underscored_class_name
+  extend_if_nonexistant :underscored_class_name
 end
