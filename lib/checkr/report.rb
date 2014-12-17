@@ -13,7 +13,7 @@ module Checkr
     end
 
     def self.find(id)
-      response = self.get("/reports/#{id}", :basic_auth => Checkr.auth )
+      response = self.get("/#{self.url_name}/#{id}", :basic_auth => Checkr.auth )
       handle_response(response)
     end
 
