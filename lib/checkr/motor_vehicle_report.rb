@@ -1,5 +1,9 @@
 module Checkr
   class MotorVehicleReport < Checkr::Report
+    def self.url_name
+      'motor_vehicle_reports'
+    end
+    
     def self.construct(params)
       accidents = params["accidents"]
       violations = params["violations"]
