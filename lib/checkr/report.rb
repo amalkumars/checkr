@@ -3,13 +3,13 @@ module Checkr
   class Report < Checkr::Base
     def self.create(params={})
       if valid?(params)
-        response = self.post("/#{self.to_s.tablelize}", :body => params, :basic_auth => Checkr.auth )
+        response = self.post("/reports", :body => params, :basic_auth => Checkr.auth )
         handle_response(response)
       end
     end
 
     def self.find(id)
-      response = self.get("/#{self.to_s.tablelize}/#{id}", :basic_auth => Checkr.auth )
+      response = self.get("/reports/#{id}", :basic_auth => Checkr.auth )
       handle_response(response)
     end
 
