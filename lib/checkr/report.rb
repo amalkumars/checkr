@@ -16,12 +16,6 @@ module Checkr
       response = self.get("/#{self.url_name}/#{id}", :basic_auth => Checkr.auth )
       handle_response(response)
     end
-    
-    def self.find_report_details(id)
-      response = self.get("/reports/#{id}?include=candidate,ssn_trace,county_criminal_searches", 
-                          :basic_auth => Checkr.auth )
-      handle_response(response)
-    end
 
     def self.construct(params)
       records = params["records"]
