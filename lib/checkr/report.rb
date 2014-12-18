@@ -16,17 +16,23 @@ module Checkr
       response = self.get("/#{self.url_name}/#{id}", :basic_auth => Checkr.auth )
       handle_response(response)
     end
+    
+    def self.find_report_details(id)
+      response = self.get("/reports/#{id}?include=candidate,ssn_trace, sex_offender_searches, terrorist_watchlist_searches, national_criminal_searches, county_criminal_searches", 
+                          :basic_auth => Checkr.auth )
+      handle_response(response)
+    end
 
     def self.construct(params)
       records = params["records"]
- 	    report = self.new(params.except_key('records'))
- 	    report.records = []
- 	    unless records.nil? || records.empty?
- 	      records.each do |record_attributes|
- 	        report.records << Checkr::ReportRecord.construct(record_attributes)
- 	      end
- 	    end
- 	    return report
+      report = self.new(params.except_key('records'))
+      report.records = []
+      unless records.nil? || records.empty?
+        records.each do |record_attributes|
+          report.records << Checkr::ReportRecord.construct(record_attributes)
+          end
+        end
+      return report
     end
 
     protected
