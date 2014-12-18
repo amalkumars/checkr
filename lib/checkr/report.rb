@@ -18,7 +18,7 @@ module Checkr
     end
     
     def self.find_report_details(id)
-      response = self.get("/reports/#{id}?include=candidate,ssn_trace, sex_offender_searches, terrorist_watchlist_searches, national_criminal_searches, county_criminal_searches", 
+      response = self.get("/reports/#{id}?include=candidate,ssn_trace,county_criminal_searches", 
                           :basic_auth => Checkr.auth )
       handle_response(response)
     end
