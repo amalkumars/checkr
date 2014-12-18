@@ -26,7 +26,6 @@ module Checkr
  	        report.records << Checkr::ReportRecord.construct(record_attributes)
  	      end
  	    end
-
  	    return report
     end
 
