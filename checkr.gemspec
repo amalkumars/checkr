@@ -19,7 +19,9 @@ Gem::Specification.new do |spec|
   #spec.require_paths = Dir["README.md","Gemfile","Rakefile", "test/*", "lib/**/*"]
   spec.require_paths = %w(lib)
 
-  spec.add_dependency "httparty"
+  spec.required_ruby_version = ">= 1.9.2"
+
+  spec.add_dependency('httparty', '>= 0.13.3')
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
