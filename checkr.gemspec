@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   #spec.require_paths = Dir["README.md","Gemfile","Rakefile", "test/*", "lib/**/*"]
   spec.require_paths = %w(lib)
 
-  spec.required_ruby_version = ">= 1.9.2"
+  spec.required_ruby_version = ">= 2.0.0"
 
  # Commented out because getting error on bundle install
  # cannot load such file -- httparty from
