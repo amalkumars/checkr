@@ -21,7 +21,11 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 1.9.2"
 
-  spec.add_dependency('httparty', '>= 0.13.3')
+ # Commented out because getting error on bundle install
+ # cannot load such file -- httparty from
+ # Does it try to require a relative path? That's been removed in Ruby 1.9.
+ # TODO - Fix this issue
+ # spec.add_dependency('httparty', '>= 0.13.3')
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
